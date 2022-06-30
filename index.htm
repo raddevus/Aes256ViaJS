@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AES Encrpyt/Decrypt</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <p><input type="text" id="password" placeholder="password"></p>
+        <input id="clear_text" type="text" placeholder="clear text">
+        <button onclick="encryptFromText()">encrypt</button>
+        <label for="useIVCheckBox">Use IV (Init Vector)</label>
+        <input id="useIVCheckBox" type="checkbox" checked>
+        <div id="cipher_output" class="selectable"></div>
+        <input id="cipher_text" type="text" placeholder="cipher text">
+        <button onclick="decryptFromText()">decrypt</button>
+        <div id="cleartext_output"></div>
+        <div>
+          <button onclick="generateHmac()">Hmac</button>
+          <span id="hmac"></span>
+        </div>
+        <div>
+            <button onclick="validate()">Validate MAC</button>
+            <span id="validated"></span>
+        </div>
+    </body>
+</html>
+
